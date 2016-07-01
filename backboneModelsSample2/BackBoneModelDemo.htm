@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Backbone Sample Application</title>
+    <script src="libs/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="libs/underscore.js" type="text/javascript"></script>
+    <script src="libs/json2.js" type="text/javascript"></script>
+    <script src="libs/backbone.js" type="text/javascript"></script>
+    <script src="js/model.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="main">
+        <script type="text/javascript">
+            function createModel() {
+                // Lets try creating a simple backbone model
+                /*var book1 = new Book();
+                var book2 = new Book();
+
+                book2.id = 3;
+                console.log(book2.id);
+
+                var book3 = new Book({ ID: 43 });
+                console.log(book1.id);
+
+                var book4 = new Book({ ID: -4 });
+                var result = book4.isValid();*/
+
+                var book5 = new Book();
+                book5.set("ID", -1, { validate: true });
+            }
+
+        </script>
+        <input id="Button1" type="button" value="Test" onclick="createModel();" /> <br />
+
+
+    </div>
+</body>
+</html>
