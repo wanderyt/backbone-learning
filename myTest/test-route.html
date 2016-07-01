@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Backbone Route</title>
+
+    <!-- functional programming utility library -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/1.3.1/lodash.underscore.js"></script>
+    <!-- DOM & XHR utility -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- Backbone.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+</head>
+<body>
+
+    <div id="urlPL"><strong>页面加载的URL:</strong><br><span></span></div>
+    <br>
+    <div id="url"><strong>当前URL:</strong><br><span></span></div>
+
+    <script type="text/javascript">
+        /**
+         * First test
+         */
+        /*
+        $('#urlPL span').text(window.location.href);
+
+        var myRouter = new Backbone.Router();
+
+        Backbone.history.start();
+
+        myRouter.route('help','help',function(){
+            console.log('URL哈希变成了 /#help');
+        });
+
+        window.location.hash = 'help';
+
+        $('#url span').text(window.location.href);
+        */
+
+        /**
+         * Second test
+         */
+        /*var myRouter = new Backbone.Router();
+
+        myRouter.route('help','help',function(){
+            console.log('URL的hash变成了 /#help');
+        });
+
+        window.location.hash = 'help';
+
+        Backbone.history.start();
+
+        window.location.hash = 'help';
+
+        window.location.hash = 'help';*/
+
+        /**
+         * Third test
+         */
+        /*var myRouter = new Backbone.Router();
+
+        myRouter.route('','initialroute',function(){
+            console.log('初始化被调用。');
+        });
+
+        Backbone.history.start();
+
+        $('#url span').text(window.location.href);*/
+
+        /**
+         * Forth test
+         */
+        var myRouter = new Backbone.Router();
+
+        Backbone.history.start();
+
+        // /\w*/ or '*anyURL' or '*any'
+        myRouter.route('*any','anyURL',function(){
+            console.log('called anytime the url changes to any url path');
+        });
+
+        //将url hash更改为"#foo"
+        window.location.hash = 'foo';
+        //将url hash更改为"#foo/boo/bar?coo=too&noo=loo"
+        setTimeout(function(){window.location.hash = 'qa';},2000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Backbone Model</title>
+    <!-- functional programming utility library -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/1.3.1/lodash.underscore.js"></script>
+    <!-- DOM & XHR utility -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- Backbone.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+</head>
+<body>
+
+    <div id="myModel">new Backbone.Model();</div> <br />
+    <div id="instance">myModel Instance Properties: </div> <br />
+    <div id="prototype">myModel Prototype Properties and Methods: </div>
+
+    <script type="text/javascript">
+        var myModel = new Backbone.Model();
+
+        console.log('myModel = new Backbone.Model();');
+
+        console.log('myModel Instance Properties:');
+        $('#instance').append(_.keys(myModel).join("<br />"));
+        console.log(_.keys(myModel));
+
+        console.log('myModel Prototype Properties & Methods:');
+        $('#prototype').append(_.keys(Object.getPrototypeOf(myModel)).join("<br />"));
+        console.log(_.keys(Object.getPrototypeOf(myModel)));
+    </script>
+
+</body>
+</html>
